@@ -5,7 +5,7 @@ import {
   updateMenu,
   deleteMenu
 } from "../services/MenuService";
-
+import "./Menu.css";
 function Menu() {
   const [menus, setMenus] = useState([]);
   const [itemName, setItemName] = useState("");
