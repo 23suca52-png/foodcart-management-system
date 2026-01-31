@@ -3,7 +3,7 @@ A full‑stack Food Cart Shop Management application built using Spring Boot (Ba
 This project is designed as a mini final year project and follows industry‑level best practices.
 
 Live Demo:
-Frontend (Vercel): https://foodcart-management-system-frontend.vercel.app/
+Frontend (Vercel): https://foodcart-management-system.vercel.app/
 
 Features:
   Frontend (React)
