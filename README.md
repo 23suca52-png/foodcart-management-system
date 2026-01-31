@@ -17,7 +17,7 @@ Features:
   Backend (Spring Boot)
       RESTful CRUD APIs
       Spring Data JPA
-      H2 file‑based database
+      H2  database
       CORS enabled for frontend
       Dockerized backend
 
