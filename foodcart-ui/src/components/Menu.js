@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import {
   getMenus,
@@ -6,6 +7,7 @@ import {
   deleteMenu
 } from "../services/MenuService";
 import "./Menu.css";
+
 function Menu() {
   const [menus, setMenus] = useState([]);
   const [itemName, setItemName] = useState("");
@@ -53,32 +55,37 @@ function Menu() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="menu-container">
       <h2>Food Cart Menu</h2>
 
-      <input
-        placeholder="Item Name"
-        value={itemName}
-        onChange={e => setItemName(e.target.value)}
-      />
-      <input
-        placeholder="Price"
-        value={price}
-        onChange={e => setPrice(e.target.value)}
-      />
-      <input
-        placeholder="Category"
-        value={category}
-        onChange={e => setCategory(e.target.value)}
-      />
+      <div style={{ marginBottom: "12px" }}>
+        <input
+          className="form-input"
+          placeholder="Item Name"
+          value={itemName}
+          onChange={e => setItemName(e.target.value)}
+        />
+        <input
+          className="form-input"
+          placeholder="Price"
+          value={price}
+          onChange={e => setPrice(e.target.value)}
+        />
+        <input
+          className="form-input"
+          placeholder="Category"
+          value={category}
+          onChange={e => setCategory(e.target.value)}
+        />
 
-      <button onClick={handleSubmit}>
-        {editId ? "Update Item" : "Add Item"}
-      </button>
+        <button className="btn btn-primary" onClick={handleSubmit}>
+          {editId ? "Update Item" : "Add Item"}
+        </button>
+      </div>
 
       <hr />
 
-      <table border="1" cellPadding="8">
+      <table className="menu-table">
         <thead>
           <tr>
             <th>Name</th>
@@ -94,9 +101,10 @@ function Menu() {
               <td>{menu.itemName}</td>
               <td>{menu.price}</td>
               <td>{menu.category}</td>
-              <td>
-                <button onClick={() => handleEdit(menu)}>Edit</button>
+              <td className="actions">
+                <button className="btn" onClick={() => handleEdit(menu)}>Edit</button>
                 <button
+                  className="btn btn-danger"
                   onClick={() =>
                     deleteMenu(menu.id).then(loadMenus)
                   }
