@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/menu";
+const API_URL = "https://foodcart-management-system.onrender.com/";
 
 export const getMenus = () => axios.get(API_URL);
 export const addMenu = (menu) => axios.post(API_URL, menu);
